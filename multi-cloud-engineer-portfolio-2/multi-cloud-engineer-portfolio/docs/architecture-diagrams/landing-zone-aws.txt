@@ -1,1 +1,0 @@
-Placeholder for AWS landing zone architecture diagram. Replace with a PNG exported from draw.io or Lucidchart.
