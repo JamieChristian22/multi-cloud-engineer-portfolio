@@ -6,7 +6,17 @@ Welcome to my **Multi-Cloud Engineer Portfolio**, a complete collection of real,
 This portfolio highlights **serverless development**, **multi-cloud data pipelines**, **disaster recovery architecture**, and **enterprise-grade cloud engineering skills**.
 
 ---
-
+## Table of Contents
+- [Overview](#multi-cloud-engineer-portfolio)
+- [Projects](#️-projects-included)
+  - [Project 1 – Multi-Cloud Serverless Contact API](#1️⃣-multi-cloud-serverless-contact-api-aws--azure--gcp)
+  - [Project 2 – Multi-Cloud Data Lake & Analytics ETL](#2️⃣-multi-cloud-data-lake--analytics-etl-pipeline)
+  - [Project 3 – Multi-Cloud Backup & DR Blueprint](#3️⃣-multi-cloud-backup--disaster-recovery-blueprint)
+- [Tech Stack & Tools](#-tech-stack--tools)
+- [Roles This Portfolio Supports](#-why-this-portfolio-is-powerful)
+- [How to Explore & Run](#-how-to-explore)
+- [Contact](#-contact)
+---
 ## 🏗️ Projects Included
 
 ### **1️⃣ Multi-Cloud Serverless Contact API (AWS + Azure + GCP)**  
