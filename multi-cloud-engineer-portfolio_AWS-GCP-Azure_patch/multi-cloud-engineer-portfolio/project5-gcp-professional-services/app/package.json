@@ -1,9 +1,0 @@
-{
-  "name": "pro-services-container-demo",
-  "version": "1.0.0",
-  "type": "module",
-  "description": "Minimal HTTP service for container platform demos (Cloud Run / Azure Container Apps).",
-  "main": "src/server.js",
-  "license": "MIT",
-  "scripts": { "start": "node src/server.js" }
-}
