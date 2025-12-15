@@ -1,133 +1,129 @@
-# 🌐 Multi-Cloud Engineer Portfolio  
-### AWS • Azure • GCP • Serverless • Data Engineering • Backup & DR • Cloud Architecture
+# 🌐 # Multi-Cloud Engineer Portfolio (AWS • Azure • GCP)
 
-Welcome to my **Multi-Cloud Engineer Portfolio**, a complete collection of real, job-ready projects showcasing my ability to design, build, automate, and deploy workloads across **AWS, Azure, and Google Cloud Platform**.
-
-This portfolio highlights **serverless development**, **multi-cloud data pipelines**, **disaster recovery architecture**, and **enterprise-grade cloud engineering skills**.
+Job-ready, end-to-end projects that demonstrate **design + build + automate + deploy** across AWS, Azure, and Google Cloud — including **serverless**, **data engineering**, **backup/DR**, and **Professional Services-style delivery** (Terraform, CI/CD, containers, migrations, observability, security, cost optimization).
 
 ---
-## Table of Contents
-- [Overview](#multi-cloud-engineer-portfolio)
-- [Projects](#️-projects-included)
-  - [Project 1 – Multi-Cloud Serverless Contact API](#1️⃣-multi-cloud-serverless-contact-api-aws--azure--gcp)
-  - [Project 2 – Multi-Cloud Data Lake & Analytics ETL](#2️⃣-multi-cloud-data-lake--analytics-etl-pipeline)
-  - [Project 3 – Multi-Cloud Backup & DR Blueprint](#3️⃣-multi-cloud-backup--disaster-recovery-blueprint)
-- [Tech Stack & Tools](#-tech-stack--tools)
-- [Roles This Portfolio Supports](#-why-this-portfolio-is-powerful)
-- [How to Explore & Run](#-how-to-explore)
-- [Contact](#-contact)
----
-## 🏗️ Projects Included
 
-### **1️⃣ Multi-Cloud Serverless Contact API (AWS + Azure + GCP)**  
-A fully functional REST API deployed on **three clouds**, all using native serverless compute:
+## Quick Navigation
+- [Projects](#projects)
+- [Tech Stack](#tech-stack)
+- [How to Explore](#how-to-explore)
+- [Contact](#contact)
+
+---
+
+## Projects
+
+### ✅ Professional Services Delivery — Terraform + CI/CD + Containers + Logging + Security + Cost + Migrations
+
+These projects are structured like real **customer-facing Professional Services** engagements and include complete artifacts (no placeholders): runbooks, validation steps, rollback plans, operational checklists, and CI/CD pipelines.
+
+| # | Project | Cloud | What you’ll see |
+|---|--------|-------|-----------------|
+| 4 | **AWS Professional Services Delivery** | AWS | Terraform modules + dev/prod envs, GitHub Actions (Terraform CI + Docker→ECR), containerized app, **ECS Fargate + ALB**, CloudWatch logs/runbook, **AWS DMS migration pack**, security + cost toolkit |
+| 5 | **GCP Professional Services Delivery** | GCP | Terraform + **Cloud Run**, Artifact Registry, GitHub Actions (Terraform CI + Docker→Artifact Registry), Cloud Logging/Monitoring runbook, **GCP DMS migration pack**, security + cost toolkit |
+| 6 | **Azure Professional Services Delivery** | Azure | Terraform + **Container Apps**, ACR, Log Analytics + KQL, GitHub Actions (Terraform CI + Docker→ACR), runbook, **Azure DMS migration pack**, security + cost toolkit |
+
+**Folders**
+- `multi-cloud-engineer-portfolio/project4-aws-professional-services/`
+- `multi-cloud-engineer-portfolio/project5-gcp-professional-services/`
+- `multi-cloud-engineer-portfolio/project6-azure-professional-services/`
+
+---
+
+### 1️⃣ Multi-Cloud Serverless Contact API (AWS + Azure + GCP)
+
+A functional REST API deployed on three clouds using native serverless compute:
 
 - **AWS:** API Gateway → Lambda  
 - **Azure:** Azure Functions HTTP Trigger  
-- **GCP:** Cloud Functions 2nd Gen  
-- Endpoints:  
-  - `GET /contacts`  
-  - `POST /contacts`  
-  - `GET /health`  
+- **GCP:** Cloud Functions (2nd Gen)
 
-**Skills Demonstrated:**  
-Serverless development, cloud APIs, identity, logging, JSON handling, multi-cloud portability.
+Endpoints:
+- `GET /contacts`
+- `POST /contacts`
+- `GET /health`
 
-📂 `project1-multicloud-serverless-api/`
+**Skills:** serverless development, cloud APIs, identity, logging, JSON handling, portability.
+
+Folder: `project1-multicloud-serverless-api/`
 
 ---
 
-### **2️⃣ Multi-Cloud Data Lake & Analytics ETL Pipeline**  
-A single Python ingestion script that uploads normalized CSV data into:
+### 2️⃣ Multi-Cloud Data Lake & Analytics ETL Pipeline
 
+A Python ingestion workflow that uploads normalized CSV data into:
 - **AWS S3**
 - **Azure Data Lake Storage Gen2**
 - **Google Cloud Storage**
 
-Switch cloud targets using only an environment variable.
+Switch cloud targets using environment configuration.
 
-**Skills Demonstrated:**  
-Data engineering, object storage, cloud SDKs (boto3, azure-storage-blob, google-cloud-storage), ingestion patterns, analytics architecture.
+**Skills:** data engineering, object storage, cloud SDKs (boto3 / azure-storage-blob / google-cloud-storage), ingestion patterns, analytics architecture.
 
-📂 `project2-multicloud-data-lake-analytics/`
-
----
-
-### **3️⃣ Multi-Cloud Backup & Disaster Recovery Blueprint**  
-An enterprise-grade architecture & runbook for:
-
-- AWS → Azure warm standby failover  
-- AWS → GCP cold backup & archival  
-- RPO/RTO matrix  
-- Region outage playbook & recovery workflow  
-
-**Skills Demonstrated:**  
-High availability, DR strategy, cloud storage replication, backup planning, systems architecture.
-
-📂 `project3-multicloud-backup-dr/`
+Folder: `project2-multicloud-data-lake-analytics/`
 
 ---
 
-## 🧰 Tech Stack & Tools
+### 3️⃣ Multi-Cloud Backup & Disaster Recovery Blueprint
 
-### **Cloud Providers**
-- Amazon Web Services (AWS)  
-- Microsoft Azure  
+Enterprise-style architecture + runbook for:
+- **AWS → Azure** warm standby failover
+- **AWS → GCP** cold backup + archival
+- RPO/RTO matrix
+- Region outage playbook + recovery workflow
+
+**Skills:** HA/DR strategy, backup planning, resilience engineering, architecture documentation.
+
+Folder: `project3-multicloud-backup-dr/`
+
+---
+
+## Tech Stack
+
+### Cloud Providers
+- Amazon Web Services (AWS)
+- Microsoft Azure
 - Google Cloud Platform (GCP)
 
-### **Services Used**
-**AWS:** Lambda, API Gateway, S3, RDS, CloudWatch  
-**Azure:** Azure Functions, Blob Storage, VM Scale Set, Azure Database  
-**GCP:** Cloud Functions, GCS, Cloud SQL  
+### Core Tools & Patterns
+- **Terraform** (modules, environments, repeatable delivery)
+- **CI/CD** (GitHub Actions)
+- **Containers** (Docker; ECS Fargate / Cloud Run / Container Apps)
+- **Logging/Observability** (CloudWatch / Cloud Logging / Log Analytics + runbooks)
+- **Migrations** (AWS DMS / GCP DMS / Azure DMS runbooks)
+- **Security** (least privilege, network boundary controls, audit readiness)
+- **Cost Optimization** (right-sizing, retention policies, waste elimination, tagging)
 
-### **Languages & SDKs**
-- Python 3.x  
-- `boto3`  
-- `azure-storage-blob`  
-- `google-cloud-storage`  
-- REST / JSON  
-- dotenv configuration  
-
----
-
-## 📌 Why This Portfolio Is Powerful
-
-- Real **multi-cloud code**, not theoretical documentation  
-- Shows **portability** of applications across clouds  
-- Demonstrates **architect-level thinking** (DR, RPO/RTO, backup flows)  
-- Includes **compute**, **storage**, **data engineering**, **serverless**, and **resilience engineering**  
-- Perfect for roles such as:
-  - Cloud Engineer  
-  - Multi-Cloud / Solutions Architect  
-  - DevOps Engineer  
-  - Data Engineer  
-  - Platform Engineer  
+### Languages
+- Python
+- JavaScript (Node.js service for container demos)
 
 ---
 
-## 🚀 How to Explore
+## How to Explore
 
-Each project has its own:
-- `README.md`
-- Architecture documentation
-- Source code (Python)
-- Deployment notes
-- Diagrams (textual descriptions included)
+Each project includes:
+- clear README
+- architecture + operational documentation
+- code where applicable
+- deployment/run steps
+- troubleshooting/runbooks where applicable
 
-Navigate into any project folder to get started.
+Start with:
+- **Project 4/5/6** if you’re hiring for **Cloud Engineer / DevOps / Professional Services**
+- **Project 1–3** if you want **serverless + data + DR architecture breadth**
 
 ---
 
-## 📫 Contact
+## Contact
 
 **Jamie Christian II**  
-🔗 LinkedIn: https://linkedin.com/in/jamiechristiananalytics  
-🔗 GitHub: https://github.com/JamieChristian22  
-📧 Email: Jamiechristian331@gmail.com
+LinkedIn: https://linkedin.com/in/jamiechristiananalytics  
+GitHub: https://github.com/JamieChristian22  
+Email: jamiechristian331@gmail.com
 
 ---
 
 ## ⭐ Support
-
-If you like the work, feel free to **star the repository** — it helps others find the project!
-
+If you find this helpful, please star the repo — it helps others discover the work.
