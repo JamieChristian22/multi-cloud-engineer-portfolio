@@ -1,0 +1,4 @@
+- Source DB: PostgreSQL 13, ~150GB
+- Connectivity: VPN/ExpressRoute or secure outbound connectivity
+- Downtime tolerance: 10–15 minutes
+- Target: Flexible Server with HA (if required), backups and PITR enabled

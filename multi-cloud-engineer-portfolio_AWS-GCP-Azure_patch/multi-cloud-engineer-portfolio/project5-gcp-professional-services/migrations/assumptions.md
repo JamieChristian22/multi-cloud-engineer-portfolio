@@ -1,0 +1,5 @@
+- Source DB: PostgreSQL 13, ~150GB, peak 500 TPS
+- Connectivity: VPN/Interconnect or secure outbound connectivity to Cloud
+- Downtime tolerance: 10–15 minutes
+- Target: Cloud SQL HA, backups enabled, PITR enabled
+- App connection string is centrally managed for fast cutover
