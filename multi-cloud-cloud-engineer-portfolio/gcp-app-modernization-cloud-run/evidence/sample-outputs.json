@@ -1,5 +1,0 @@
-{
-  "artifact_registry_repo": "app-multicloud-demo-dev",
-  "cloud_sql_instance": "pg-multicloud-demo-dev-abc123",
-  "service_url": "https://app-multicloud-demo-dev-xyz.a.run.app"
-}

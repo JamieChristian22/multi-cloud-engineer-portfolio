@@ -1,5 +1,0 @@
-{
-  "container_app_fqdn": "app-multicloud-demo-dev.eastus.azurecontainerapps.io",
-  "acr_login_server": "acrmulticlouddemodevabc123.azurecr.io",
-  "postgres_fqdn": "pg-multicloud-demo-dev-abc123.postgres.database.azure.com"
-}
