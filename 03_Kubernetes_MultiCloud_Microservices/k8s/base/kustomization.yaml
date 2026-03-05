@@ -1,0 +1,4 @@
+resources:
+  - user.yaml
+  - catalog.yaml
+  - order.yaml
