@@ -1,0 +1,19 @@
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: multi-cloud-microservices
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/JamieChristian22/multi-cloud-engineer-portfolio
+    targetRevision: HEAD
+    path: 03_Kubernetes_MultiCloud_Microservices/k8s/overlays/prod
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: mc-prod
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

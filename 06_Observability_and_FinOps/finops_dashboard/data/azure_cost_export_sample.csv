@@ -1,0 +1,26 @@
+provider,month,service,usage_units,cost_usd
+Azure,2025-10-01,Virtual Machines,53.31,335.9
+Azure,2025-10-01,Storage,349.18,969.88
+Azure,2025-10-01,SQL Database,401.33,881.58
+Azure,2025-10-01,AKS,305.93,615.63
+Azure,2025-10-01,Monitor,101.54,270.98
+Azure,2025-11-01,Virtual Machines,261.99,841.88
+Azure,2025-11-01,Storage,394.25,730.45
+Azure,2025-11-01,SQL Database,299.11,805.5
+Azure,2025-11-01,AKS,186.78,723.94
+Azure,2025-11-01,Monitor,246.52,153.28
+Azure,2025-12-01,Virtual Machines,233.84,351.75
+Azure,2025-12-01,Storage,155.27,1041.68
+Azure,2025-12-01,SQL Database,176.62,182.97
+Azure,2025-12-01,AKS,347.86,437.08
+Azure,2025-12-01,Monitor,402.75,721.59
+Azure,2026-01-01,Virtual Machines,232.87,837.46
+Azure,2026-01-01,Storage,125.14,999.14
+Azure,2026-01-01,SQL Database,90.52,144.53
+Azure,2026-01-01,AKS,257.84,900.15
+Azure,2026-01-01,Monitor,275.47,294.17
+Azure,2026-02-01,Virtual Machines,363.34,284.5
+Azure,2026-02-01,Storage,221.46,601.85
+Azure,2026-02-01,SQL Database,333.63,445.63
+Azure,2026-02-01,AKS,89.44,510.76
+Azure,2026-02-01,Monitor,482.85,247.45

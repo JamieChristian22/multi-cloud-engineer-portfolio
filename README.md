@@ -1,94 +1,88 @@
-# 🌐 Multi-Cloud Engineer Portfolio – AWS · Azure · GCP
+# Multi‑Cloud Engineer Portfolio
 
-**Author:** Jamie Christian II  
-**Target Roles:** Cloud Engineer · Multi-Cloud Engineer · Cloud Architect · DevOps / Platform Engineer
 
-This portfolio showcases **job-ready multi-cloud projects** deployed or architected across **AWS, Azure, and Google Cloud Platform**.
-The focus is on **real architectures**, not toy demos: serverless APIs, data lake ETL, and a production-style
-backup & disaster recovery blueprint.
+![AWS](https://img.shields.io/badge/AWS-Cloud-orange)
+![Azure](https://img.shields.io/badge/Azure-Cloud-blue)
+![Google Cloud](https://img.shields.io/badge/GCP-Cloud-red)
+![Terraform](https://img.shields.io/badge/IaC-Terraform-purple)
+![Kubernetes](https://img.shields.io/badge/Platform-Kubernetes-green)
+![Docker](https://img.shields.io/badge/Containers-Docker-blue)
+![CI/CD](https://img.shields.io/badge/DevOps-CI/CD-black)
+![OpenTelemetry](https://img.shields.io/badge/Observability-OpenTelemetry-yellow)
 
----
+# Multi-Cloud Engineer Portfolio (AWS • Azure • GCP)
 
-## 🔧 Multi-Cloud Skill Summary
+**Owner:** Jamie Christian  
+**Focus:** Multi-cloud architecture, Infrastructure as Code (Terraform), Kubernetes, CI/CD, security (Zero Trust), observability, and FinOps.
 
-| Area                  | Skills & Tools                                                                                 |
-|-----------------------|------------------------------------------------------------------------------------------------|
-| Cloud Providers       | AWS · Microsoft Azure · Google Cloud Platform                                                  |
-| Compute & Serverless  | AWS Lambda · Azure Functions · GCP Cloud Functions                                             |
-| Networking & APIs     | API Gateway · Azure API Management · GCP API Gateway · REST/JSON                               |
-| Storage & Data        | S3 · Azure Blob / ADLS Gen2 · GCP Cloud Storage · Data Lakes · ETL Pipelines                   |
-| Identity & Security   | IAM · RBAC · Service Principals · Service Accounts · Least Privilege · Secrets Management      |
-| Resiliency & DR       | Backups · Cross-Region / Cross-Cloud DR · RPO/RTO Design                                      |
-| IaC & Automation      | Terraform (buckets, functions, IAM) · Environment configuration via `.env` / config files     |
-| Observability         | CloudWatch Logs · Azure Monitor / App Insights · Cloud Logging                                 |
-| Languages             | Python (boto3, azure-storage-blob, google-cloud-storage)                                       |
+This repo contains **6 fully designed, end-to-end projects**. Each project includes:
+- Architecture + design rationale
+- Real code (Python / Bash / YAML)
+- IaC templates (Terraform where applicable)
+- CI/CD workflows (GitHub Actions)
+- Reproducible local demos where possible (Docker Compose / Streamlit)
+- Sample datasets to produce working outputs
 
----
-
-## 📁 Project Index
-
-### 1. Multi-Cloud Serverless Contact API (AWS · Azure · GCP)
-
-**Folder:** `01_serverless-contact-api/`  
-
-A **Contact directory API** implemented natively on AWS Lambda, Azure Functions, and GCP Cloud Functions with a
-**shared REST contract**. Demonstrates how to keep client behavior identical while the infrastructure is cloud-specific.
-
-- Endpoints: `POST /contacts`, `GET /contacts/{id}`, `DELETE /contacts/{id}`, `GET /contacts`
-- Storage: DynamoDB / Azure Table / Firestore (or equivalent)
-- Docs: Architecture, Deployment, Testing, Security & Cost
-
-👉 See: `01_serverless-contact-api/README.md`
+> **Note:** Cloud credentials are intentionally read from environment variables (best practice). No secrets are stored in this repo.
 
 ---
 
-### 2. Multi-Cloud Data Lake & ETL Pipeline (AWS · Azure · GCP)
+## Projects
 
-**Folder:** `02_multicloud-datalake-etl/`  
+1. **01_Ecommerce_Analytics_MultiCloud_Pipeline**  
+   Cross-cloud analytics: Postgres → Data Quality → Unified Fact Table → BigQuery-ready export (Parquet/CSV), with optional cloud load.
 
-A **config-driven ETL pipeline** that loads CSV data into **S3**, **ADLS Gen2**, or **GCS** just by switching configuration.
-Implements the classic **Landing → Raw → Processed** data lake zones and uses a small abstraction layer to swap SDKs.
+2. **02_Terraform_MultiCloud_Foundation**  
+   Repeatable landing zone foundations: AWS VPC, Azure VNet, GCP VPC, with compute + storage.
 
-👉 See: `02_multicloud-datalake-etl/README.md`
+3. **03_Kubernetes_MultiCloud_Microservices**  
+   FastAPI microservices + containerization + Kubernetes manifests that run on EKS/AKS/GKE.
 
----
+4. **04_CICD_MultiCloud_Deployments**  
+   GitHub Actions pipeline: tests → build → scan → publish to GHCR → deploy to Kubernetes via Kustomize.
 
-### 3. Multi-Cloud Backup & Disaster Recovery Blueprint
+5. **05_ZeroTrust_Security_Federation**  
+   Reference implementation of cross-cloud identity + least privilege + secrets handling patterns.
 
-**Folder:** `03_disaster-recovery-blueprint/`  
-
-A realistic **multi-cloud DR strategy** where:
-
-- **AWS** is the primary production environment
-- **Azure** hosts a **warm standby**
-- **GCP** stores **cold backups** for long-term retention
-
-Includes an RPO/RTO matrix, DR runbook, architecture diagram, and risk log you can speak to in interviews.
-
-👉 See: `03_disaster-recovery-blueprint/README.md`
+6. **06_Observability_and_FinOps**  
+   Prometheus/Grafana stack + cost unification (AWS CUR / Azure cost export / GCP billing export) with Streamlit dashboard.
 
 ---
 
-## 🏗 Documentation Pattern
+## Quick Start (Local)
 
-Each project follows the same documentation structure:
+Most projects have a local demo. Start here:
 
-- `README.md` – high-level overview, use case, and key decisions
-- `docs/Architecture.md` – architecture diagrams and design rationale
-- `docs/Deployment.md` – how to deploy (where applicable)
-- `docs/Testing*.md` – how to validate behavior and parity
-- `docs/RPO_RTO_Matrix.*` / `Risk_*.md` – for DR-specific planning
+- Project 01: run the Postgres + pipeline demo:
+  ```bash
+  cd 01_Ecommerce_Analytics_MultiCloud_Pipeline
+  docker compose up -d
+  python pipeline/run_pipeline.py
+  ```
 
-This makes the repo easy for **recruiters, hiring managers, and engineers** to navigate quickly.
+- Project 06: run the FinOps dashboard:
+  ```bash
+  cd 06_Observability_and_FinOps/finops_dashboard
+  python -m venv .venv && source .venv/bin/activate
+  pip install -r requirements.txt
+  streamlit run app.py
+  ```
 
 ---
 
-## 🚀 Using This Portfolio in Interviews
+## Skills Demonstrated
 
-Use this repo as the **anchor** for cloud-focused conversations:
+- Multi-cloud networking and foundations (AWS/Azure/GCP)
+- IaC with Terraform modules and environments
+- Kubernetes deployments and platform patterns
+- CI/CD pipelines and release automation
+- Zero Trust security design + IAM policy engineering
+- Observability and cost analytics (FinOps)
 
-- “Tell me about an API you built” → Serverless Contact API
-- “Tell me about a data pipeline / data lake you designed” → Multi-Cloud ETL
-- “Tell me about fault tolerance or disaster recovery” → DR Blueprint
 
-Link this repo on your **resume**, **LinkedIn**, and application forms as your **Cloud / Multi-Cloud Portfolio**.
+
+
+## New (Elite) Project
+7. **07_MultiCloud_AI_Inference_Platform**  
+   A distributed systems project: global inference gateway + caching + autoscaling-ready deployment patterns (local runnable demo included).
+

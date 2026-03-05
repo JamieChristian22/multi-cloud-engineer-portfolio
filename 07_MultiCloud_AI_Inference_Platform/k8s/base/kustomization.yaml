@@ -1,0 +1,8 @@
+
+resources:
+  - redis.yaml
+  - gateway.yaml
+  - backend-us-east.yaml
+  - backend-us-west.yaml
+  - backend-eu-central.yaml
+  - hpa-gateway.yaml

@@ -1,0 +1,11 @@
+
+gateway:
+  image: ghcr.io/jamiechristian22/inference-gateway:1.0.0
+  replicas: 2
+
+redis:
+  image: redis:7
+
+backends:
+  image: ghcr.io/jamiechristian22/model-backend:1.0.0
+  replicas: 2

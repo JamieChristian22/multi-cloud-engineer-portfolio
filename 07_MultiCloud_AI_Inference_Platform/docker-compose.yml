@@ -1,0 +1,49 @@
+
+version: "3.9"
+services:
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+
+  backend_us_east:
+    build: ./services/model-backend
+    environment:
+      - REGION=us-east
+      - PORT=9101
+    ports:
+      - "9101:9101"
+
+  backend_us_west:
+    build: ./services/model-backend
+    environment:
+      - REGION=us-west
+      - PORT=9102
+    ports:
+      - "9102:9102"
+
+  backend_eu_central:
+    build: ./services/model-backend
+    environment:
+      - REGION=eu-central
+      - PORT=9103
+    ports:
+      - "9103:9103"
+
+  gateway:
+    build: ./services/gateway
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - BACKEND_US_EAST=http://backend_us_east:9101
+      - BACKEND_US_WEST=http://backend_us_west:9102
+      - BACKEND_EU_CENTRAL=http://backend_eu_central:9103
+      - CACHE_TTL_SECONDS=120
+      - RATE_LIMIT_RPM=60
+    ports:
+      - "9000:9000"
+    depends_on:
+      - redis
+      - backend_us_east
+      - backend_us_west
+      - backend_eu_central

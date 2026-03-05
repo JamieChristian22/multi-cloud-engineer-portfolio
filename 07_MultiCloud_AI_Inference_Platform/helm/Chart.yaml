@@ -1,0 +1,7 @@
+
+apiVersion: v2
+name: multicloud-ai-inference
+description: Multi-cloud AI inference platform (gateway + redis + regional backends)
+type: application
+version: 0.1.0
+appVersion: "1.0.0"

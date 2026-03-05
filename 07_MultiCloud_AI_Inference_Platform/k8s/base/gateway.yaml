@@ -1,0 +1,62 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: inference-gateway
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: inference-gateway
+  template:
+    metadata:
+      labels:
+        app: inference-gateway
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "9000"
+    spec:
+      containers:
+        - name: inference-gateway
+          image: ghcr.io/jamiechristian22/inference-gateway:1.0.0
+          env:
+            - name: REDIS_HOST
+              value: "redis"
+            - name: REDIS_PORT
+              value: "6379"
+            - name: BACKEND_US_EAST
+              value: "http://backend-us-east:9101"
+            - name: BACKEND_US_WEST
+              value: "http://backend-us-west:9102"
+            - name: BACKEND_EU_CENTRAL
+              value: "http://backend-eu-central:9103"
+            - name: CACHE_TTL_SECONDS
+              value: "120"
+            - name: RATE_LIMIT_RPM
+              value: "60"
+          ports:
+            - containerPort: 9000
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 9000
+            initialDelaySeconds: 3
+            periodSeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 9000
+            initialDelaySeconds: 10
+            periodSeconds: 10
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: inference-gateway
+spec:
+  selector:
+    app: inference-gateway
+  ports:
+    - port: 9000
+      targetPort: 9000
+  type: LoadBalancer
