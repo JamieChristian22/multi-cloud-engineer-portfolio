@@ -1,86 +1,65 @@
 # 02_Azure_Terraform_Infrastructure
 
 ## Project Overview
-This Terraform project recreates the Azure Enterprise Cloud Platform infrastructure built in the Azure Portal screenshots. All values are filled in using the actual portfolio resource names from the project.
+This is a filled, modular Terraform IaC implementation for the Azure Enterprise Cloud Platform portfolio. It includes provider configuration, remote backend state, reusable modules, `.gitignore`, and GitHub Actions CI/CD.
 
-## Actual Azure Resource Values Used
-
-| Category | Value |
-|---|---|
-| Subscription Name | Azure subscription 1 |
-| Resource Group | rg-enterprise-infra |
-| Region | East US |
-| Virtual Network | vnet-enterprise |
-| VNet Address Space | 10.0.0.0/16 |
-| Subnet | app-subnet |
-| Subnet CIDR | 10.0.0.0/24 |
-| Network Security Group | nsg-enterprise |
-| HTTP Rule | allow-http, TCP 80, Priority 100 |
-| HTTPS Rule | allow-https, TCP 443, Priority 110 |
-| Storage Account | stenterprisefiles |
-| Blob Container | project-files |
-| Blob Access Level | Private |
-| Key Vault | kv-enterprise-demo |
-| Key Vault Secret | db-password |
-| App Service Plan | ASP-rgenterpriseinfra-a004 |
-| Web App | enterprise-app-demo |
-| Runtime Stack | Node.js 22 LTS |
-| Operating System | Linux |
-| SKU | Free F1 |
-| Monitoring Metric | Requests |
-| Alert Threshold | Greater than 5 requests |
-| Evaluation Frequency | Every 5 minutes |
-| Lookback Period | 5 minutes |
-
-## Folder Contents
-
+## Folder Structure
 ```text
 02_Azure_Terraform_Infrastructure/
 ├── README.md
+├── backend.tf
+├── providers.tf
 ├── main.tf
 ├── variables.tf
 ├── outputs.tf
-└── terraform.tfvars
+├── terraform.tfvars
+├── .gitignore
+└── modules/
+    ├── resource_group/
+    ├── networking/
+    ├── storage/
+    ├── key_vault/
+    ├── app_service/
+    └── monitoring/
 ```
 
-## Architecture
-
+## GitHub Actions CI/CD
+Workflow path:
 ```text
-Internet Users
-      ↓
-Azure Linux Web App: enterprise-app-demo
-      ↓
-App Service Plan: ASP-rgenterpriseinfra-a004
-      ↓
-Virtual Network: vnet-enterprise
-      ↓
-Subnet: app-subnet / 10.0.0.0/24
-      ↓
-Network Security Group: nsg-enterprise
-      ↓
-Azure Storage Account: stenterprisefiles
-      ↓
-Blob Container: project-files
-      ↓
-Azure Key Vault: kv-enterprise-demo
-      ↓
-Azure Monitor Request Metrics + Alert Rule
+.github/workflows/azure-terraform-cicd.yml
 ```
+The workflow runs Terraform format checks, init, validate, plan, and a controlled manual apply from the main branch.
 
-## Terraform Commands
+## Actual Project Values
+| Item | Value |
+|---|---|
+| Resource Group | rg-enterprise-infra |
+| Region | East US |
+| VNet | vnet-enterprise |
+| Subnet | app-subnet |
+| NSG | nsg-enterprise |
+| Storage Account | stenterprisefiles |
+| Blob Container | project-files |
+| Terraform State Container | tfstate |
+| Key Vault | kv-enterprise-demo |
+| App Service Plan | ASP-rgenterpriseinfra-a004 |
+| Web App | enterprise-app-demo |
+| Runtime | Node.js 22 LTS |
+| Alert Rule | webapp-requests-greater-than-5 |
 
+## Commands
 ```bash
 terraform init
+terraform fmt -recursive
 terraform validate
 terraform plan
 terraform apply
 ```
 
-Destroy resources:
-
-```bash
-terraform destroy
+## GitHub Secrets Used for CI/CD
+```text
+AZURE_CLIENT_ID
+AZURE_TENANT_ID
+AZURE_SUBSCRIPTION_ID
 ```
-
-## Important Note
-These files are filled in with the exact project names used in the screenshots. Azure Storage Account and Key Vault names must be globally unique across Azure. These names match the existing project; if redeploying into a different tenant or subscription and the names are unavailable, rename only those two values in `terraform.tfvars`.
+These are secure CI/CD authentication values and should stay in GitHub repository secrets, not inside source code.
