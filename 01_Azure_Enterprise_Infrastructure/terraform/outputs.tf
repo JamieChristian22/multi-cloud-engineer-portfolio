@@ -1,29 +1,44 @@
 output "resource_group_name" {
-  value       = azurerm_resource_group.enterprise.name
-  description = "Resource group created for the platform."
+  description = "Name of the Azure Resource Group."
+  value       = azurerm_resource_group.main.name
+}
+
+output "location" {
+  description = "Azure region used for the deployment."
+  value       = azurerm_resource_group.main.location
+}
+
+output "web_app_name" {
+  description = "Name of the Azure Linux Web App."
+  value       = azurerm_linux_web_app.main.name
 }
 
 output "web_app_url" {
-  value       = "https://${azurerm_linux_web_app.enterprise_app.default_hostname}"
-  description = "Live Azure App Service URL."
+  description = "Default HTTPS URL for the deployed Azure Web App."
+  value       = "https://${azurerm_linux_web_app.main.default_hostname}"
 }
 
 output "storage_account_name" {
-  value       = azurerm_storage_account.enterprise_files.name
-  description = "Storage account used for project files and logs."
+  description = "Name of the secure Azure Storage Account."
+  value       = azurerm_storage_account.main.name
+}
+
+output "private_blob_container" {
+  description = "Name of the private blob container."
+  value       = azurerm_storage_container.project_files.name
 }
 
 output "key_vault_name" {
-  value       = azurerm_key_vault.enterprise.name
-  description = "Azure Key Vault name."
+  description = "Name of the Azure Key Vault."
+  value       = azurerm_key_vault.main.name
 }
 
-output "virtual_network_name" {
-  value       = azurerm_virtual_network.enterprise.name
-  description = "Virtual network name."
+output "application_insights_name" {
+  description = "Name of the Application Insights resource."
+  value       = azurerm_application_insights.main.name
 }
 
-output "network_security_group_name" {
-  value       = azurerm_network_security_group.enterprise.name
-  description = "Network security group name."
+output "log_analytics_workspace_name" {
+  description = "Name of the Log Analytics Workspace."
+  value       = azurerm_log_analytics_workspace.main.name
 }

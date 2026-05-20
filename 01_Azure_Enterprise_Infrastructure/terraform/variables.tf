@@ -1,36 +1,35 @@
-variable "resource_group_name" {
-  description = "Azure resource group for the enterprise cloud platform."
+variable "project_prefix" {
+  description = "Short lowercase prefix used for Azure resource names."
   type        = string
-  default     = "rg-enterprise-infra"
+  default     = "jcazent"
 }
 
 variable "location" {
-  description = "Azure region for all deployed resources."
+  description = "Azure region for deployment."
   type        = string
-  default     = "East US"
+  default     = "eastus"
 }
 
-variable "virtual_network_name" {
-  description = "Enterprise virtual network name."
+variable "environment" {
+  description = "Deployment environment name."
   type        = string
-  default     = "vnet-enterprise"
+  default     = "dev"
 }
 
-variable "app_subnet_name" {
-  description = "Application subnet name."
+variable "owner" {
+  description = "Owner tag for governance and cost tracking."
   type        = string
-  default     = "app-subnet"
+  default     = "Jamie Christian"
 }
 
-variable "network_security_group_name" {
-  description = "Network security group name."
+variable "cost_center" {
+  description = "Cost center tag for portfolio project tracking."
   type        = string
-  default     = "nsg-enterprise"
+  default     = "portfolio-cloud-engineering"
 }
 
-variable "demo_db_password" {
-  description = "Demo secret value stored in Azure Key Vault. Change before real production use."
+variable "app_service_sku" {
+  description = "App Service Plan SKU. F1 is free tier in supported regions/subscriptions; B1 is more reliable if F1 is unavailable."
   type        = string
-  sensitive   = true
-  default     = "PortfolioDemoPassword!2026"
+  default     = "F1"
 }
