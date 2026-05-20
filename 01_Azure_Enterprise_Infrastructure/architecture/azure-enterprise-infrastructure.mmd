@@ -1,0 +1,13 @@
+flowchart TB
+    User[Business User / Admin] -->|HTTPS| App[Azure App Service]
+    App --> Insights[Application Insights]
+    App --> KV[Azure Key Vault]
+    App --> Storage[Storage Account / Private Blob Container]
+    RG[Resource Group] --> VNet[Azure Virtual Network]
+    VNet --> Subnet[Application Subnet]
+    Subnet --> NSG[Network Security Group]
+    NSG --> App
+    Insights --> LAW[Log Analytics Workspace]
+    Monitor[Azure Monitor] --> Alert[Metric Alert Rule]
+    LAW --> Alert
+    Alert --> Ops[Cloud Operations Response]
