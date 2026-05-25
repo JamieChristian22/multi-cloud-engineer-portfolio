@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cloud-insurance-app
+  namespace: cloud-portfolio
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: cloud-insurance-app
+
+  template:
+    metadata:
+      labels:
+        app: cloud-insurance-app
+
+    spec:
+      containers:
+      - name: cloud-insurance-app
+
+        image: cloud-insurance-app:1.0
+
+        imagePullPolicy: Never
+
+        ports:
+        - containerPort: 8080
