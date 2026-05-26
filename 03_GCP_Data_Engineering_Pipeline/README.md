@@ -50,7 +50,7 @@ This project simulates a cloud analytics pipeline consisting of:
 
 # 🖼️ Architecture Diagram
 
-![Architecture Diagram](architecture/architecture-diagram.png)
+![Architecture Diagram](architecture/architecture-diagram-2.png)
 
 ---
 
@@ -61,6 +61,7 @@ This project simulates a cloud analytics pipeline consisting of:
 │
 ├── README.md
 ├── architecture/
+│   └── architecture-diagram-2.png
 ├── screenshots/
 ├── sql/
 ├── scripts/
@@ -115,7 +116,7 @@ ORDER BY total_revenue DESC;
 # 🔄 Data Pipeline Workflow
 
 The analytics pipeline workflow includes:
-1. dataset ingestion
+1. CSV dataset upload
 2. BigQuery storage
 3. SQL querying
 4. analytics reporting
@@ -188,21 +189,17 @@ terraform apply
 
 # 📸 Screenshots
 
-## GCP Console Dashboard
+## GCP Project Dashboard
 
-![GCP Dashboard](screenshots/01-gcp-dashboard.png)
+![GCP Dashboard](screenshots/01-gcp-project-dashboard.png)
 
----
 
-## Dataset Upload
-
-![Dataset Upload](screenshots/02-dataset-upload.png)
 
 ---
 
-## BigQuery Workspace
+## CSV Uploaded
 
-![BigQuery Workspace](screenshots/03-bigquery-workspace.png)
+![CSV Uploaded](screenshots/03-csv-uploaded.png)
 
 ---
 
@@ -226,13 +223,13 @@ terraform apply
 
 ## Monitoring Dashboard
 
-![Monitoring Dashboard](screenshots/07-monitoring-dashboard.png)
+![Monitoring Dashboard](screenshots/08-monitoring.png)
 
 ---
 
 ## Architecture Diagram
 
-![Architecture Diagram](screenshots/08-architecture-diagram.png)
+![Architecture Diagram](architecture/architecture-diagram-2.png)
 
 ---
 
