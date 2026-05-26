@@ -1,263 +1,294 @@
-# ☁️ GCP BigQuery Data Engineering Pipeline
+# 📊 GCP Data Engineering Pipeline
 
-## 📌 Project Overview
-
-This project demonstrates a real-world cloud data engineering analytics pipeline built on Google Cloud Platform (GCP). The solution ingests customer sales data into BigQuery, performs SQL-based transformations and analytics, visualizes business KPIs in Looker Studio, and monitors cloud metrics using Google Cloud Monitoring.
-
-The project was designed using GCP free-tier services and simulates a production-style analytics workflow commonly used by cloud engineers, data engineers, and BI analysts.
-
----
-
-# 🚀 Architecture
-
-CSV Dataset → BigQuery → SQL Transformations → Looker Studio Dashboard → Cloud Monitoring
+![GCP](https://img.shields.io/badge/GCP-Cloud-red)
+![BigQuery](https://img.shields.io/badge/BigQuery-Analytics-blue)
+![SQL](https://img.shields.io/badge/SQL-Data-orange)
+![Terraform](https://img.shields.io/badge/Terraform-IaC-purple)
 
 ---
 
-# 🛠️ Technologies Used
+# 📌 Project Overview
 
-## Cloud & Data Platforms
+The GCP Data Engineering Pipeline project demonstrates a cloud-native analytics engineering workflow using Google Cloud Platform services including BigQuery, SQL analytics, cloud storage concepts, and operational monitoring.
+
+This project simulates a real-world enterprise analytics environment where cloud-based datasets are ingested, queried, transformed, and visualized using scalable Google Cloud infrastructure.
+
+The project focuses on:
+- analytics engineering
+- BigQuery workflows
+- SQL analytics
+- cloud-native data pipelines
+- operational monitoring
+- scalable cloud data architecture
+
+---
+
+# ☁️ Technologies Used
+
 - Google Cloud Platform (GCP)
 - BigQuery
-- Cloud Monitoring
-- Looker Studio
-
-## Languages & Tools
 - SQL
+- Cloud Storage
 - Python
-- GitHub
-- CSV Data Processing
-
-## Monitoring & Visualization
-- Metrics Explorer
-- KPI Dashboards
-- Revenue Analytics
-- Product Sales Reporting
+- Terraform
+- Cloud Monitoring
+- Analytics Engineering
 
 ---
 
-# 📂 Project Structure
+# 🏗️ Architecture Overview
 
-```bash
+This project simulates a cloud analytics pipeline consisting of:
+- cloud-based datasets
+- BigQuery tables
+- SQL analytics workflows
+- monitoring & observability
+- analytics dashboards
+- cloud-native reporting architecture
+
+---
+
+# 🖼️ Architecture Diagram
+
+![Architecture Diagram](architecture/architecture-diagram.png)
+
+---
+
+# 🛠️ Project Structure
+
+```txt
 03_GCP_Data_Engineering_Pipeline/
 │
+├── README.md
+├── architecture/
 ├── screenshots/
-│   ├── 01-bigquery-dataset.png
-│   ├── 02-table-upload.png
-│   ├── 03-bigquery-table.png
-│   ├── 04-sql-queries.png
-│   ├── 05-query-results.png
-│   ├── 06-looker-dashboard.png
-│   ├── 07-dashboard.png
-│   └── 08-monitoring.png
-│
 ├── sql/
-│   ├── analytics_queries.sql
-│   ├── transformations.sql
-│   └── create_tables.sql
-│
 ├── scripts/
-│   └── upload_data.py
-│
+├── datasets/
 ├── documentation/
-│   ├── deployment-guide.md
-│   ├── security-considerations.md
-│   └── cost-optimization.md
-│
-└── README.md
+└── .gitignore
 ```
 
 ---
 
-# 📊 Key Features
+# 📂 BigQuery Dataset
 
-## ✅ BigQuery Data Warehouse
-- Created cloud-hosted analytics dataset
-- Uploaded structured CSV sales data
-- Built analytical SQL workflows
+BigQuery was used as the central cloud analytics warehouse.
 
-## ✅ SQL Analytics
-- Revenue calculations
-- Product performance analysis
-- Monthly sales trend reporting
-- Data transformations using SQL
+## BigQuery Features
+- scalable analytics
+- SQL querying
+- cloud-native data warehousing
+- high-performance analytics
 
-## ✅ Looker Studio Dashboard
-Created interactive business intelligence dashboards including:
-- Total Revenue KPI
-- Monthly Revenue Trends
-- Top Selling Products
-- Product Revenue Distribution
-
-## ✅ Cloud Monitoring & Observability
-Configured:
-- BigQuery Query Metrics
-- Metrics Explorer
-- Monitoring dashboards
-- Operational observability workflows
+## Dataset Goals
+- enterprise reporting
+- analytics engineering
+- KPI analysis
+- operational insights
 
 ---
 
-# 📈 Dashboard Preview
+# 📊 SQL Analytics
 
-## Customer Sales Analytics Dashboard
+SQL queries were used to analyze cloud-based datasets and generate reporting insights.
 
-### KPI Metrics
-- Total Revenue
-- Product Revenue
-- Monthly Revenue Trends
+## SQL Features
+- aggregation queries
+- KPI calculations
+- filtering & grouping
+- analytics reporting
 
-### Visualizations
-- Line Charts
-- Bar Charts
-- Pie Charts
-- KPI Cards
-
----
-
-# 📸 Project Screenshots
-
-## BigQuery Dataset Setup
-![BigQuery Dataset](screenshots/01-bigquery-dataset.png)
-
-## SQL Query Execution
-![SQL Queries](screenshots/04-sql-queries.png)
-
-## Query Results
-![Query Results](screenshots/05-query-results.png)
-
-## Final Dashboard
-![Dashboard](screenshots/07-dashboard.png)
-
-## Monitoring & Observability
-![Monitoring](screenshots/08-monitoring.png)
-
----
-
-# 🔍 Sample SQL Analytics
-
-## Total Revenue Query
+## Example Query
 
 ```sql
-SELECT 
-    SUM(
-        SAFE_CAST(string_field_2 AS NUMERIC) *
-        SAFE_CAST(string_field_3 AS NUMERIC)
-    ) AS total_revenue
-FROM `durable-path-497100-c5.analytics_pipeline.customer_sales`;
+SELECT
+  product_name,
+  SUM(revenue) AS total_revenue
+FROM insurance_analytics.sales
+GROUP BY product_name
+ORDER BY total_revenue DESC;
 ```
 
 ---
 
-# ⚙️ Deployment Process
+# 🔄 Data Pipeline Workflow
 
-## Step 1 — Create GCP Project
-- Enable BigQuery API
-- Enable Monitoring API
+The analytics pipeline workflow includes:
+1. dataset ingestion
+2. BigQuery storage
+3. SQL querying
+4. analytics reporting
+5. monitoring & observability
 
-## Step 2 — Create Dataset
-Dataset:
-```bash
-analytics_pipeline
-```
+---
 
-## Step 3 — Upload CSV Data
-Uploaded:
-```bash
-Updated_sales.csv
-```
+# 📊 Monitoring & Observability
 
-## Step 4 — Execute SQL Scripts
-Run:
-- create_tables.sql
-- transformations.sql
-- analytics_queries.sql
-
-## Step 5 — Build Dashboard
-Use Looker Studio to create:
-- KPI cards
-- Revenue charts
-- Product analytics dashboards
-
-## Step 6 — Configure Monitoring
-Track:
-- Query count
-- Storage metrics
-- BigQuery usage
+Monitoring concepts include:
+- BigQuery monitoring
+- query tracking
+- dataset visibility
+- analytics observability
+- cloud operational monitoring
 
 ---
 
 # 🔐 Security Considerations
 
-This project follows foundational cloud security practices including:
-- IAM role-based access
-- Least privilege access control
-- Monitoring and logging
-- API restriction best practices
+This project demonstrates cloud data security concepts.
+
+## Security Features
+- cloud dataset access control
+- analytics isolation
+- monitoring visibility
+- Infrastructure-as-Code planning
+
+## Future Improvements
+- IAM hardening
+- dataset-level permissions
+- encrypted storage
+- data governance policies
 
 ---
 
-# 💰 Cost Optimization
+# 🏗️ Terraform Infrastructure-as-Code
 
-Designed for free-tier usage by:
-- Using lightweight datasets
-- Limiting query sizes
-- Optimizing dashboard refreshes
-- Monitoring query usage
+Terraform planning concepts were included to support Infrastructure-as-Code workflows for cloud analytics environments.
+
+## Terraform Features
+- cloud resource automation
+- repeatable infrastructure deployment
+- scalable analytics provisioning
+- cloud-native IaC workflows
 
 ---
 
-# 🎯 Business Value
+# 📋 Deployment Workflow
 
-This project demonstrates practical skills in:
-- Cloud Data Engineering
-- SQL Analytics
-- Business Intelligence
+## Initialize Terraform
+
+```bash
+terraform init
+```
+
+## Validate Terraform
+
+```bash
+terraform validate
+```
+
+## Deploy Infrastructure
+
+```bash
+terraform apply
+```
+
+---
+
+# 📸 Screenshots
+
+## GCP Console Dashboard
+
+![GCP Dashboard](screenshots/01-gcp-dashboard.png)
+
+---
+
+## Dataset Upload
+
+![Dataset Upload](screenshots/02-dataset-upload.png)
+
+---
+
+## BigQuery Workspace
+
+![BigQuery Workspace](screenshots/03-bigquery-workspace.png)
+
+---
+
+## BigQuery Dataset
+
+![BigQuery Dataset](screenshots/04-bigquery-dataset.png)
+
+---
+
+## BigQuery Table
+
+![BigQuery Table](screenshots/05-bigquery-table.png)
+
+---
+
+## SQL Query Results
+
+![SQL Query Results](screenshots/06-sql-query-results.png)
+
+---
+
+## Monitoring Dashboard
+
+![Monitoring Dashboard](screenshots/07-monitoring-dashboard.png)
+
+---
+
+## Architecture Diagram
+
+![Architecture Diagram](screenshots/08-architecture-diagram.png)
+
+---
+
+# 📚 Resume-Relevant Skills Demonstrated
+
+- Google Cloud Platform
+- BigQuery
+- SQL
+- Analytics Engineering
+- Cloud Data Pipelines
+- Terraform
 - Cloud Monitoring
-- Data Visualization
-- Cloud Operations
+- Data Warehousing
+- KPI Reporting
+- Cloud-Native Analytics
+- Infrastructure-as-Code
 
 ---
 
-# 📚 Skills Demonstrated
+# 🧠 Lessons Learned
 
-## Data Engineering
-- ETL workflows
-- SQL transformations
+This project strengthened understanding of:
 - BigQuery analytics
-
-## Cloud Engineering
-- GCP resource management
-- Monitoring & observability
-- Cloud-native analytics
-
-## Business Intelligence
-- KPI reporting
-- Dashboard development
-- Revenue analytics
+- SQL reporting workflows
+- cloud-native data pipelines
+- analytics engineering
+- monitoring & observability
+- Infrastructure-as-Code concepts
+- cloud analytics architecture
 
 ---
 
-# 👨‍💻 Author
+# 🚀 Future Improvements
 
-## Jamie Christian
-
-### Certifications
-- Google Advanced Data Analytics
-- Google Cloud Certifications
-- IBM Data Engineering
-- Microsoft Power BI Data Analyst
-- Tableau Business Intelligence Analyst
-
-### GitHub Portfolio
-:contentReference[oaicite:2]{index=2}
+Potential future enhancements:
+- streaming data pipelines
+- Airflow orchestration
+- Looker Studio dashboards
+- automated ETL workflows
+- advanced monitoring
+- machine learning integration
+- cloud-native data governance
 
 ---
 
-# ⭐ Project Status
+# 🎯 Career Relevance
 
-✅ Completed  
-✅ Portfolio Ready  
-✅ Cloud Monitoring Enabled  
-✅ Dashboard Operational  
-✅ BigQuery Analytics Functional
+This project supports skills relevant to:
+- Cloud/Data Engineer
+- Data Engineer
+- Analytics Engineer
+- Cloud Engineer
+- BI Engineer
+
+---
+
+# ✅ Project Status
+
+Completed GCP Data Engineering Pipeline project demonstrating BigQuery analytics, SQL reporting, monitoring, cloud-native data engineering workflows, and Infrastructure-as-Code planning.
