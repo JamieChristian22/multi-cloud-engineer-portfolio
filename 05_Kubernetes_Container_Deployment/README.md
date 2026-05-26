@@ -1,23 +1,24 @@
 # 🚀 Kubernetes Container Deployment
 
-## 📌 Project Overview
+![Kubernetes](https://img.shields.io/badge/Kubernetes-Orchestration-blue)
+![Docker](https://img.shields.io/badge/Docker-Containers-blue)
+![Terraform](https://img.shields.io/badge/Terraform-IaC-purple)
+![Cloud](https://img.shields.io/badge/Cloud-Native-blue)
+
+---
+
+# 📌 Project Overview
 
 This project demonstrates a complete cloud-native Kubernetes deployment workflow using Docker, Kubernetes, Flask, and Infrastructure-as-Code concepts. The application simulates a lightweight insurance platform deployed within a Kubernetes cluster using namespaces, deployments, services, and container orchestration principles.
 
 The project was designed to showcase hands-on experience with:
-- Containerization
+- containerization
 - Kubernetes orchestration
-- Cloud-native application deployment
-- Pod management
-- Load balancing
-- Monitoring & logging
-- Infrastructure automation
-
----
-
-# 🏗️ Architecture Diagram
-
-![Architecture](architecture/architecture-diagram.png)
+- cloud-native application deployment
+- pod management
+- load balancing
+- monitoring & logging
+- Infrastructure-as-Code workflows
 
 ---
 
@@ -33,6 +34,25 @@ The project was designed to showcase hands-on experience with:
 
 ---
 
+# 🏗️ Architecture Overview
+
+This project demonstrates a Kubernetes-based cloud-native architecture consisting of:
+- Docker containerized application
+- Kubernetes deployments
+- Kubernetes services
+- namespaces
+- load balancing
+- monitoring & logging
+- scalable pod orchestration
+
+---
+
+# 🖼️ Architecture Diagram
+
+![Kubernetes Architecture](architecture/architecture-diagram-4.png)
+
+---
+
 # 🛠️ Project Structure
 
 ```txt
@@ -43,6 +63,7 @@ The project was designed to showcase hands-on experience with:
 ├── docker/
 ├── kubernetes/
 ├── architecture/
+│   └── architecture-diagram-4.png
 ├── screenshots/
 ├── documentation/
 ├── terraform/
@@ -53,24 +74,26 @@ The project was designed to showcase hands-on experience with:
 
 # 📦 Containerized Application
 
-The Flask application displays:
-- Cloud Insurance App
-- Kubernetes deployment status
-- Running environment
-- Version information
+The Flask application simulates a cloud-native insurance platform.
 
-The application was containerized using Docker and deployed into Kubernetes using deployment and service manifests.
+## Application Features
+- Flask web application
+- Docker container deployment
+- Kubernetes orchestration
+- scalable architecture
+- cloud-native workflow
 
 ---
 
 # 🐳 Docker Containerization
 
-## Docker Features
+Docker was used to package the application into a portable runtime environment.
 
-- Lightweight Python 3.12 slim image
-- Flask-based application container
-- Exposed application port 8080
-- Portable runtime environment
+## Docker Features
+- lightweight Python image
+- containerized Flask application
+- exposed application port
+- consistent runtime environment
 
 ## Build Docker Image
 
@@ -88,33 +111,50 @@ docker run -p 8080:8080 cloud-insurance-app:1.0
 
 # ☸️ Kubernetes Deployment
 
-## Namespace
+Kubernetes orchestrates the containerized application using deployments and services.
 
-The project uses an isolated Kubernetes namespace:
+## Kubernetes Components
+- Namespace
+- Deployment
+- Service
+- Pods
+- Load Balancer
+
+## Deployment Features
+- 2 pod replicas
+- rolling deployment workflow
+- self-healing containers
+- scalable architecture
+
+---
+
+# 🌐 Kubernetes Namespace
+
+The project uses an isolated namespace:
 
 ```txt
 cloud-portfolio
 ```
 
-## Deployment
+Namespaces help organize and isolate workloads within Kubernetes clusters.
 
-The deployment configuration includes:
-- 2 application replicas
-- rolling deployment management
-- pod orchestration
-- self-healing containers
+---
 
-## Service
+# 🔄 Kubernetes Services
 
-The application is exposed using:
-- Kubernetes LoadBalancer Service
-- Port 80 → Container Port 8080
+The application is exposed using a Kubernetes LoadBalancer Service.
+
+## Service Features
+- external application access
+- traffic routing
+- load balancing
+- scalable connectivity
 
 ---
 
 # 📋 Kubernetes Commands
 
-## Deploy Resources
+## Deploy Kubernetes Resources
 
 ```bash
 kubectl apply -f kubernetes/namespace.yaml
@@ -144,58 +184,62 @@ kubectl logs -n cloud-portfolio -l app=cloud-insurance-app
 
 # 📊 Monitoring & Logging
 
-Kubernetes monitoring and logging were performed using:
-- kubectl logs
-- kubectl describe pods
-- pod health monitoring
-- service verification
+Monitoring and observability were performed using Kubernetes operational tools.
 
-The project demonstrates operational visibility into:
-- running pods
-- deployment health
-- container logs
-- Kubernetes service exposure
+## Monitoring Features
+- pod health monitoring
+- deployment visibility
+- service monitoring
+- centralized logs
+- operational troubleshooting
+
+## Monitoring Commands
+
+```bash
+kubectl describe pods -n cloud-portfolio
+```
+
+```bash
+kubectl logs -n cloud-portfolio -l app=cloud-insurance-app
+```
 
 ---
 
 # 🔐 Security Considerations
 
-This project implements several cloud-native security concepts:
+This project demonstrates foundational cloud-native security concepts.
 
-- Namespace isolation
-- Lightweight container images
-- Kubernetes resource separation
-- Infrastructure-as-Code principles
-- Local Kubernetes cluster deployment
+## Security Features
+- namespace isolation
+- workload separation
+- Infrastructure-as-Code deployment
+- containerized environments
+- operational monitoring
 
-Future improvements include:
+## Future Security Improvements
 - RBAC policies
 - Kubernetes Secrets
-- Network Policies
 - TLS encryption
-- Container vulnerability scanning
+- Network Policies
+- vulnerability scanning
 
 ---
 
-# 💰 Cost Optimization
+# 🏗️ Terraform Infrastructure-as-Code
 
-The project was optimized for low-cost local development by using:
-- Docker Desktop Kubernetes
-- lightweight containers
-- local cluster deployment
-- efficient replica configuration
+Terraform planning files are included to support Infrastructure-as-Code workflows.
 
-Additional optimization opportunities:
-- autoscaling
-- CPU/memory limits
-- centralized monitoring
-- cloud-managed Kubernetes services
+## Terraform Features
+- Kubernetes infrastructure planning
+- repeatable deployments
+- infrastructure automation
+- cloud-native provisioning
 
 ---
 
 # 📸 Screenshots
 
-## Docker Build
+## Docker Build Success
 
 ![Docker Build](screenshots/01-docker-build-success.png)
 
@@ -203,19 +247,19 @@ Additional optimization opportunities:
 
 ## Local Container Running
 
-![Local Container](screenshots/02-container-running-local.png)
+![Container Running](screenshots/02-container-running-local.png)
 
 ---
 
-## Kubernetes Pods
+## Kubernetes Pods Running
 
-![Pods](screenshots/03-kubernetes-pods-running.png)
+![Kubernetes Pods](screenshots/03-kubernetes-pods-running.png)
 
 ---
 
-## Kubernetes Services
+## Kubernetes Service Created
 
-![Services](screenshots/04-kubernetes-service-created.png)
+![Kubernetes Service](screenshots/04-kubernetes-service-created.png)
 
 ---
 
@@ -227,7 +271,7 @@ Additional optimization opportunities:
 
 ## Kubernetes Logs
 
-![Logs](screenshots/06-kubernetes-logs.png)
+![Kubernetes Logs](screenshots/06-kubernetes-logs.png)
 
 ---
 
@@ -237,63 +281,68 @@ Additional optimization opportunities:
 
 ---
 
-# 📚 Key Kubernetes Concepts Demonstrated
+## Architecture Diagram
 
-- Containerization
-- Namespaces
-- Deployments
-- Services
-- Load Balancers
-- Pod orchestration
-- Replica management
-- Cloud-native deployments
-- Monitoring & logging
+![Architecture Diagram](architecture/architecture-diagram-4.png)
+
+---
+
+# 📚 Resume-Relevant Skills Demonstrated
+
+- Kubernetes
+- Docker
+- Terraform
+- Flask
+- Python
+- YAML
+- Infrastructure-as-Code
+- Container Orchestration
+- Cloud-Native Architecture
+- Monitoring & Logging
+- Load Balancing
+- DevOps Concepts
 
 ---
 
 # 🧠 Lessons Learned
 
-This project strengthened hands-on understanding of:
-- Docker image creation
-- Kubernetes YAML configuration
-- pod deployment workflows
-- service exposure
-- container orchestration
+This project strengthened understanding of:
+- Docker containerization
+- Kubernetes orchestration
+- deployment workflows
+- load balancing
+- monitoring & logging
+- cloud-native application architecture
+- Infrastructure-as-Code concepts
 - Kubernetes troubleshooting
-- monitoring & logging practices
 
 ---
 
 # 🚀 Future Improvements
 
-Future enhancements may include:
+Potential future enhancements:
 - Helm charts
 - Kubernetes ingress controllers
-- Horizontal Pod Autoscaling
+- autoscaling
 - CI/CD pipelines
-- GitHub Actions automation
-- cloud-managed Kubernetes clusters (GKE/EKS/AKS)
+- GitHub Actions
 - Prometheus & Grafana monitoring
-- Terraform automation for full infrastructure deployment
+- cloud-managed Kubernetes clusters
+- service mesh architecture
 
 ---
 
-# 🎯 Resume-Relevant Skills Demonstrated
+# 🎯 Career Relevance
 
-- Docker
-- Kubernetes
-- Flask
-- Python
-- YAML
-- Terraform
-- Cloud-Native Infrastructure
-- DevOps Concepts
-- Container Orchestration
-- Monitoring & Logging
-- Infrastructure-as-Code
+This project supports skills relevant to:
+- Cloud Engineer
+- DevOps Engineer
+- Platform Engineer
+- Infrastructure Engineer
+- Cloud Operations Engineer
 
 ---
 
 # ✅ Project Status
 
-Completed and successfully deployed within a Kubernetes cluster using Docker Desktop Kubernetes.
+Completed Kubernetes container deployment project demonstrating Docker containerization, Kubernetes orchestration, monitoring, load balancing, Infrastructure-as-Code planning, and cloud-native engineering workflows.
