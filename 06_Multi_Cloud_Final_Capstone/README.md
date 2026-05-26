@@ -1,6 +1,15 @@
 # 🌐 Enterprise Multi-Cloud Insurance Analytics Platform
 
-## 📌 Project Overview
+![AWS](https://img.shields.io/badge/AWS-Cloud-orange)
+![Azure](https://img.shields.io/badge/Azure-Cloud-blue)
+![GCP](https://img.shields.io/badge/GCP-Cloud-red)
+![Terraform](https://img.shields.io/badge/Terraform-IaC-purple)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-Orchestration-blue)
+![Docker](https://img.shields.io/badge/Docker-Containers-blue)
+
+---
+
+# 📌 Project Overview
 
 The Enterprise Multi-Cloud Insurance Analytics Platform is a cloud-native engineering capstone project designed to demonstrate real-world enterprise architecture across AWS, Azure, Google Cloud Platform, Kubernetes, Docker, and Terraform.
 
@@ -73,7 +82,7 @@ across AWS, Azure, GCP, and Kubernetes
 
 # 🖼️ Architecture Diagram
 
-![Architecture](architecture/multi-cloud-architecture.png)
+![Architecture](architecture/Enterprise%20Multi-Cloud%20Insurance%20Analytics%20Platform.png)
 
 ---
 
@@ -85,6 +94,7 @@ across AWS, Azure, GCP, and Kubernetes
 ├── README.md
 │
 ├── architecture/
+│   └── Enterprise Multi-Cloud Insurance Analytics Platform.png
 │
 ├── screenshots/
 │
@@ -384,7 +394,7 @@ The platform was designed using cost-conscious cloud engineering principles.
 
 ## Final Architecture
 
-![Final Architecture](screenshots/08-final-architecture.png)
+![Final Architecture](architecture/Enterprise%20Multi-Cloud%20Insurance%20Analytics%20Platform.png)
 
 ---
 
