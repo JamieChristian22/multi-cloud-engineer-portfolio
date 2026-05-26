@@ -7,7 +7,7 @@
 
 ---
 
-## 📌 Project Overview
+# 📌 Project Overview
 
 The Azure Terraform Infrastructure project demonstrates how cloud infrastructure can be provisioned, managed, and documented using Terraform Infrastructure-as-Code. This project focuses on automating Azure infrastructure deployment with reusable configuration files, provider setup, variables, outputs, backend planning, and modular cloud engineering practices.
 
@@ -15,7 +15,7 @@ The goal of this project is to simulate a real-world Infrastructure-as-Code work
 
 ---
 
-## 🎯 Business Problem
+# 🎯 Business Problem
 
 Organizations need reliable, repeatable, and auditable infrastructure deployments. Manual cloud provisioning can lead to configuration drift, inconsistent environments, security gaps, and deployment errors.
 
@@ -23,54 +23,52 @@ This project solves that problem by using Terraform to define Azure infrastructu
 
 ---
 
-## ☁️ Technologies Used
+# ☁️ Technologies Used
 
 - Microsoft Azure
 - Terraform
 - Azure Resource Manager
 - Azure Virtual Network
-- Azure Subnets
 - Network Security Groups
 - Azure Storage
-- Azure Key Vault
 - Azure Monitor
 - GitHub
 - Infrastructure-as-Code
 
 ---
 
-## 🏗️ Architecture Overview
+# 🏗️ Architecture Overview
 
 This project represents an Azure infrastructure environment provisioned through Terraform. The infrastructure includes cloud networking, security controls, storage resources, and monitoring-ready architecture.
 
-### Core Components
+## Core Components
 
 - Azure Resource Group
 - Azure Virtual Network
-- Azure Subnets
-- Network Security Group
+- Network Security Groups
 - Azure Storage Account
-- Azure Key Vault
-- Azure Monitor-ready configuration
+- Monitoring-ready infrastructure
 - Terraform provider configuration
 - Terraform variables and outputs
 
 ---
 
-## 🖼️ Architecture Diagram
+# 🖼️ Architecture Diagram
 
-![Architecture](architecture/architecture-diagram.png)
+![Terraform Architecture](architecture/terraform-architecture-diagram.png)
 
 ---
 
-## 🛠️ Project Structure
+# 🛠️ Project Structure
 
 ```txt
 02_Azure_Terraform_Infrastructure/
 │
 ├── README.md
 ├── architecture/
-├── screenshots/
+│   └── terraform-architecture-diagram.png
+├── Screenshots/
+│
 ├── terraform/
 │   ├── provider.tf
 │   ├── main.tf
@@ -78,6 +76,7 @@ This project represents an Azure infrastructure environment provisioned through 
 │   ├── outputs.tf
 │   ├── terraform.tfvars
 │   └── backend.tf
+│
 ├── modules/
 ├── documentation/
 └── .gitignore
@@ -85,11 +84,11 @@ This project represents an Azure infrastructure environment provisioned through 
 
 ---
 
-## 🌐 Infrastructure-as-Code Workflow
+# 🌐 Infrastructure-as-Code Workflow
 
 Terraform was used to define Azure resources in code rather than manually creating every service through the Azure Portal.
 
-### Terraform Workflow
+## Terraform Workflow
 
 ```bash
 terraform init
@@ -100,120 +99,107 @@ terraform apply
 
 ---
 
-## 📂 Terraform Files
+# 📂 Terraform Files
 
-### `provider.tf`
-
+## provider.tf
 Configures the AzureRM provider and Terraform requirements.
 
-### `main.tf`
-
+## main.tf
 Defines the main Azure infrastructure resources.
 
-### `variables.tf`
-
+## variables.tf
 Stores reusable input variables for names, regions, tags, and configuration values.
 
-### `outputs.tf`
+## outputs.tf
+Displays useful deployment outputs such as resource group names and storage account details.
 
-Displays useful deployment outputs such as resource group name, storage account name, and virtual network ID.
-
-### `terraform.tfvars`
-
+## terraform.tfvars
 Stores environment-specific variable values.
 
-### `backend.tf`
-
+## backend.tf
 Represents backend configuration planning for remote Terraform state management.
 
 ---
 
-## 🔐 Security Considerations
+# 🔐 Security Considerations
 
 This project includes cloud security concepts such as:
-
 - Infrastructure-as-Code version control
 - resource tagging
 - Network Security Group planning
 - secure variable handling
-- Key Vault architecture
 - reduced manual configuration drift
-- separation of configuration files
+- repeatable infrastructure deployment
 
-### Future Security Enhancements
-
+## Future Security Enhancements
 - remote state locking
-- Azure Key Vault integration for secrets
-- private endpoints
+- Azure Key Vault integration
 - RBAC policies
 - policy-as-code
 - automated security scanning
 
 ---
 
-## 📊 Monitoring & Observability
+# 📊 Monitoring & Observability
 
-This project is designed to support future monitoring and observability through:
-
+This project was designed to support future monitoring and observability through:
 - Azure Monitor
 - Log Analytics
-- resource-level metrics
 - infrastructure health tracking
+- resource-level metrics
 - operational dashboards
 
 ---
 
-## 💰 Cost Optimization
+# 💰 Cost Optimization
 
 Cost-conscious decisions include:
-
 - reusable Terraform configuration
 - minimal resource deployment
-- region-specific infrastructure
-- modular structure for controlled scaling
-- avoiding unnecessary always-on resources
+- modular infrastructure structure
+- controlled cloud scaling
 
-Future improvements may include:
-- budgets and alerts
-- autoscaling policies
+## Future Improvements
+- budgets & alerts
+- autoscaling
 - lifecycle management
-- resource cleanup automation
+- infrastructure cleanup automation
 
 ---
 
-## 📋 Deployment Instructions
+# 📋 Deployment Instructions
 
-### 1. Navigate to Terraform Directory
+## 1. Navigate to Terraform Directory
 
 ```bash
 cd terraform
 ```
 
-### 2. Initialize Terraform
+## 2. Initialize Terraform
 
 ```bash
 terraform init
 ```
 
-### 3. Validate Configuration
+## 3. Validate Configuration
 
 ```bash
 terraform validate
 ```
 
-### 4. Preview Infrastructure
+## 4. Preview Infrastructure
 
 ```bash
 terraform plan
 ```
 
-### 5. Apply Infrastructure
+## 5. Apply Infrastructure
 
 ```bash
 terraform apply
 ```
 
-### 6. Destroy Resources When Finished
+## 6. Destroy Infrastructure
 
 ```bash
 terraform destroy
@@ -221,59 +207,47 @@ terraform destroy
 
 ---
 
-## 📸 Screenshots
+# 📸 Screenshots
 
-## Terraform Init
+## Terraform Init Success
 
-![Terraform Init](screenshots/terraform-init.png)
-
----
-
-## Terraform Validate
-
-![Terraform Validate](screenshots/terraform-validate.png)
+![Terraform Init](Screenshots/terraform-init-success.png)
 
 ---
 
-## Terraform Plan
+## Terraform Validate Success
 
-![Terraform Plan](screenshots/terraform-plan.png)
-
----
-
-## Terraform Apply
-
-![Terraform Apply](screenshots/terraform-apply.png)
+![Terraform Validate](Screenshots/terraform-validate-success.png)
 
 ---
 
-## Azure Resource Group
+## Azure Resource Group Created
 
-![Resource Group](screenshots/resource-group.png)
-
----
-
-## Azure Virtual Network
-
-![Virtual Network](screenshots/virtual-network.png)
+![Resource Group](Screenshots/azure-resource-group-created.png)
 
 ---
 
-## Azure Storage Account
+## Network Security Group Created
 
-![Storage Account](screenshots/storage-account.png)
-
----
-
-## Architecture Diagram
-
-![Architecture Diagram](screenshots/architecture-diagram.png)
+![NSG Created](Screenshots/nsg-created.png)
 
 ---
 
-## 📚 Documentation
+## Storage Account Created
 
-Additional documentation is included in the `documentation/` folder:
+![Storage Account](Screenshots/storage-account-created.png)
+
+---
+
+## Terraform Architecture Diagram
+
+![Architecture Diagram](architecture/terraform-architecture-diagram.png)
+
+---
+
+# 📚 Documentation
+
+Additional documentation is included in the `documentation/` folder.
 
 ```txt
 documentation/
@@ -284,53 +258,59 @@ documentation/
 
 ---
 
-## 🧠 Lessons Learned
-
-This project strengthened understanding of:
-
-- Terraform Infrastructure-as-Code fundamentals
-- Azure provider configuration
-- repeatable cloud infrastructure deployment
-- variable-based infrastructure design
-- output management
-- infrastructure documentation
-- cloud security planning
-- infrastructure lifecycle management
-
----
-
-## 🚀 Future Improvements
-
-Potential future enhancements include:
-
-- Terraform modules
-- GitHub Actions CI/CD
-- remote backend with Azure Storage
-- Azure Key Vault secret integration
-- Azure Policy
-- automated infrastructure testing
-- multiple environments such as dev, test, and prod
-
----
-
-## 🎯 Resume-Relevant Skills Demonstrated
+# 📚 Resume-Relevant Skills Demonstrated
 
 - Terraform
 - Microsoft Azure
 - Infrastructure-as-Code
-- Azure Resource Manager
-- Cloud Networking
+- Azure Networking
 - Azure Storage
-- Azure Key Vault
 - Network Security Groups
+- Cloud Infrastructure
 - DevOps Concepts
 - Automation
-- Cloud Infrastructure
-- Monitoring Planning
-- Version Control
+- Infrastructure Provisioning
+- Cloud Architecture
 
 ---
 
-## ✅ Project Status
+# 🧠 Lessons Learned
 
-Completed Azure Terraform Infrastructure project demonstrating Infrastructure-as-Code, Azure provisioning, cloud automation, security planning, and DevOps-oriented infrastructure workflows.
+This project strengthened understanding of:
+- Terraform Infrastructure-as-Code workflows
+- Azure provider configuration
+- repeatable infrastructure deployment
+- cloud automation
+- infrastructure lifecycle management
+- infrastructure documentation
+- cloud architecture planning
+
+---
+
+# 🚀 Future Improvements
+
+Potential future enhancements include:
+- Terraform modules
+- GitHub Actions CI/CD
+- remote Terraform backends
+- Azure Key Vault integration
+- infrastructure testing
+- multi-environment deployments
+- policy automation
+
+---
+
+# 🎯 Career Relevance
+
+This project supports skills relevant to:
+- Cloud Engineer
+- Infrastructure Engineer
+- DevOps Engineer
+- Platform Engineer
+- Cloud Operations Engineer
+
+---
+
+# ✅ Project Status
+
+Completed Azure Terraform Infrastructure project demonstrating Infrastructure-as-Code, Azure provisioning, cloud automation, networking, security controls, and DevOps-oriented infrastructure workflows.
