@@ -1,6 +1,0 @@
-project_prefix  = "jcazent"
-location        = "eastus"
-environment     = "dev"
-owner           = "Jamie Christian"
-cost_center     = "portfolio-cloud-engineering"
-app_service_sku = "F1"
