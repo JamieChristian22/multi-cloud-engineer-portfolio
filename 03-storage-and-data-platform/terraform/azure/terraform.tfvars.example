@@ -1,0 +1,3 @@
+location     = "eastus"
+project_name = "storage-data-platform"
+environment  = "dev"

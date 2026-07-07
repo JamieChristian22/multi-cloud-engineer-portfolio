@@ -1,0 +1,4 @@
+aws_region    = "us-east-1"
+project_name  = "storage-data-platform"
+environment   = "dev"
+bucket_suffix = "jamie-demo-001"
