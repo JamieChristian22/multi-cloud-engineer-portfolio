@@ -1,0 +1,5 @@
+project_id = "replace-with-your-dev-project-id"
+environment = "dev"
+primary_region = "us-east1"
+dr_region = "us-west1"
+unique_suffix = "jc212dev"
