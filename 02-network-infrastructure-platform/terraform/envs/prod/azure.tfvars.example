@@ -1,0 +1,10 @@
+location            = "eastus"
+project_name        = "network-infrastructure-platform"
+environment         = "prod"
+vnet_address_space  = ["10.130.0.0/16"]
+allowed_admin_cidr  = "YOUR_PUBLIC_IP/32"
+subnets = {
+  public  = ["10.130.1.0/24"]
+  private = ["10.130.11.0/24"]
+  app     = ["10.130.21.0/24"]
+}

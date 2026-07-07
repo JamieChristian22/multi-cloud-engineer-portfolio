@@ -1,0 +1,10 @@
+gcp_project_id     = "YOUR_GCP_PROJECT_ID"
+gcp_region         = "us-central1"
+project_name       = "network-infrastructure-platform"
+environment        = "dev"
+allowed_admin_cidr = "YOUR_PUBLIC_IP/32"
+subnets = {
+  public  = { region = "us-central1", cidr = "10.40.1.0/24" }
+  private = { region = "us-central1", cidr = "10.40.11.0/24" }
+  app     = { region = "us-central1", cidr = "10.40.21.0/24" }
+}
