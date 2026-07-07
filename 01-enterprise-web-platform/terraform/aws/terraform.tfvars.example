@@ -1,0 +1,4 @@
+aws_region   = "us-east-1"
+project_name = "enterprise-web-platform"
+environment  = "dev"
+owner        = "JamieChristian22"

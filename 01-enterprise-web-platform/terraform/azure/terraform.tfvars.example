@@ -1,0 +1,4 @@
+location     = "eastus"
+project_name = "enterprise-web-platform"
+environment  = "dev"
+owner        = "JamieChristian22"
