@@ -1,5 +1,12 @@
 # ☁️ Multi-Cloud Engineer Portfolio
 
+Multi-cloud infrastructure engineering portfolio covering AWS, Azure, Google Cloud, Terraform, networking, compute, storage, monitoring and disaster recovery. Architecture and lab examples are not evidence of live production deployment.
+
+**Explore related projects:** [cloud platform engineering lab](https://github.com/JamieChristian22/cloud-platform-engineering-lab) · [aws vpc terraform lab](https://github.com/JamieChristian22/aws-vpc-terraform-lab)
+
+[Recruiter quick-start guide](https://github.com/JamieChristian22/JamieChristian22/blob/main/RECRUITER_START_HERE.md) · [Portfolio website](https://jamiechristian22.github.io/)
+
+
 <p align="center">
 
 ![AWS](https://img.shields.io/badge/AWS-Cloud_Engineering-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)
